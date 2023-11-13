@@ -1,0 +1,257 @@
+$date
+	Sat Jul 31 09:08:48 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module fpu_tb $end
+$var wire 32 ! Result [31:0] $end
+$var wire 4 " FPUFlags [3:0] $end
+$var reg 2 # FPUControl [1:0] $end
+$var reg 4 $ FPUFlags_expected [3:0] $end
+$var reg 32 % Result_expected [31:0] $end
+$var reg 32 & a [31:0] $end
+$var reg 32 ' b [31:0] $end
+$var reg 1 ( clk $end
+$var reg 32 ) errors [31:0] $end
+$var reg 1 * reset $end
+$var reg 32 + vectornum [31:0] $end
+$scope module fpu_dut $end
+$var wire 2 , FPUControl [1:0] $end
+$var wire 32 - a [31:0] $end
+$var wire 32 . b [31:0] $end
+$var wire 4 / single_mult_flags [3:0] $end
+$var wire 32 0 single_mult [31:0] $end
+$var wire 4 1 single_add_flags [3:0] $end
+$var wire 32 2 single_add [31:0] $end
+$var wire 4 3 half_mult_flags [3:0] $end
+$var wire 16 4 half_mult [15:0] $end
+$var wire 4 5 half_add_flags [3:0] $end
+$var wire 16 6 half_add [15:0] $end
+$var reg 4 7 FPUFlags [3:0] $end
+$var reg 32 8 Result [31:0] $end
+$scope module half_fp_adder $end
+$var wire 16 9 a [15:0] $end
+$var wire 16 : b [15:0] $end
+$var wire 1 ; neg $end
+$var wire 1 < sign_b $end
+$var wire 1 = sign_a $end
+$var wire 16 > res_add [15:0] $end
+$var wire 11 ? mantisa_b [10:0] $end
+$var wire 11 @ mantisa_a [10:0] $end
+$var wire 4 A flags_add [3:0] $end
+$var wire 5 B exponent_b [4:0] $end
+$var wire 5 C exponent_a [4:0] $end
+$var reg 6 D adjust_exponent [5:0] $end
+$var reg 10 E adjust_mant [9:0] $end
+$var reg 5 F big_exponent [4:0] $end
+$var reg 1 G carry $end
+$var reg 5 H diff_exponente [4:0] $end
+$var reg 11 I mant_a [10:0] $end
+$var reg 11 J mant_b [10:0] $end
+$var reg 12 K mant_sum [11:0] $end
+$var reg 1 L overflow $end
+$var reg 5 M res_exponent [4:0] $end
+$var reg 10 N res_mant [9:0] $end
+$var reg 1 O res_sign $end
+$var reg 1 P zero $end
+$upscope $end
+$scope module half_fp_mult $end
+$var wire 16 Q a [15:0] $end
+$var wire 16 R b [15:0] $end
+$var wire 1 S carry $end
+$var wire 1 T neg $end
+$var wire 1 U overflow $end
+$var wire 1 V res_sign $end
+$var wire 1 W sign_b $end
+$var wire 1 X sign_a $end
+$var wire 16 Y res_mult [15:0] $end
+$var wire 10 Z norm_mant [9:0] $end
+$var wire 5 [ norm_exponent [4:0] $end
+$var wire 11 \ mult_mantisa [10:0] $end
+$var wire 6 ] mult_exponent [5:0] $end
+$var wire 11 ^ mantisa_b [10:0] $end
+$var wire 11 _ mantisa_a [10:0] $end
+$var wire 22 ` long_mult_mantisa [21:0] $end
+$var wire 4 a flags_mult [3:0] $end
+$var wire 5 b exponent_b [4:0] $end
+$var wire 5 c exponent_a [4:0] $end
+$var reg 5 d res_exponent [4:0] $end
+$var reg 10 e res_mant [9:0] $end
+$var reg 1 f zero $end
+$upscope $end
+$scope module single_fp_adder $end
+$var wire 32 g a [31:0] $end
+$var wire 32 h b [31:0] $end
+$var wire 1 i neg $end
+$var wire 1 j sign_b $end
+$var wire 1 k sign_a $end
+$var wire 32 l res_add [31:0] $end
+$var wire 24 m mantisa_b [23:0] $end
+$var wire 24 n mantisa_a [23:0] $end
+$var wire 4 o flags_add [3:0] $end
+$var wire 8 p exponent_b [7:0] $end
+$var wire 8 q exponent_a [7:0] $end
+$var reg 9 r adjust_exponent [8:0] $end
+$var reg 23 s adjust_mant [22:0] $end
+$var reg 8 t big_exponent [7:0] $end
+$var reg 1 u carry $end
+$var reg 8 v diff_exponente [7:0] $end
+$var reg 24 w mant_a [23:0] $end
+$var reg 24 x mant_b [23:0] $end
+$var reg 25 y mant_sum [24:0] $end
+$var reg 1 z overflow $end
+$var reg 8 { res_exponent [7:0] $end
+$var reg 23 | res_mant [22:0] $end
+$var reg 1 } res_sign $end
+$var reg 1 ~ zero $end
+$upscope $end
+$scope module single_fp_mult $end
+$var wire 32 !" a [31:0] $end
+$var wire 32 "" b [31:0] $end
+$var wire 1 #" carry $end
+$var wire 1 $" neg $end
+$var wire 1 %" overflow $end
+$var wire 1 &" res_sign $end
+$var wire 1 '" sign_b $end
+$var wire 1 (" sign_a $end
+$var wire 32 )" res_mult [31:0] $end
+$var wire 23 *" norm_mant [22:0] $end
+$var wire 8 +" norm_exponent [7:0] $end
+$var wire 24 ," mult_mantisa [23:0] $end
+$var wire 9 -" mult_exponent [8:0] $end
+$var wire 24 ." mantisa_b [23:0] $end
+$var wire 24 /" mantisa_a [23:0] $end
+$var wire 48 0" long_mult_mantisa [47:0] $end
+$var wire 4 1" flags_mult [3:0] $end
+$var wire 8 2" exponent_b [7:0] $end
+$var wire 8 3" exponent_a [7:0] $end
+$var reg 8 4" res_exponent [7:0] $end
+$var reg 23 5" res_mant [22:0] $end
+$var reg 1 6" zero $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#75
+$dumpvars
+16"
+b0 5"
+b0 4"
+b0 3"
+b10000100 2"
+b100 1"
+b10000010101001000000101100000000000000000000000 0"
+b100000000000000000000000 /"
+b100000101010010000001011 ."
+b101 -"
+b10000010101001000000101 ,"
+b101 +"
+b101010010000001011 *"
+b0 )"
+0("
+0'"
+0&"
+0%"
+0$"
+0#"
+b1000010000000101010010000001011 ""
+b0 !"
+0~
+0}
+b101010010000001011 |
+b10000100 {
+0z
+b100000101010010000001011 y
+b100000101010010000001011 x
+b0 w
+b10000100 v
+0u
+b10000100 t
+b101010010000001011 s
+b10000100 r
+b0 q
+b10000100 p
+b0 o
+b100000000000000000000000 n
+b100000101010010000001011 m
+b1000010000000101010010000001011 l
+0k
+0j
+0i
+b1000010000000101010010000001011 h
+b0 g
+1f
+b0 e
+b0 d
+b0 c
+b1001 b
+b1100 a
+b100000010110000000000 `
+b10000000000 _
+b10000001011 ^
+b111010 ]
+b1000000101 \
+b11010 [
+b1011 Z
+b1000000000000000 Y
+0X
+1W
+1V
+0U
+1T
+0S
+b1010010000001011 R
+b0 Q
+0P
+1O
+b1001 N
+b1001 M
+0L
+b10000001001 K
+b10000001011 J
+b10 I
+b1001 H
+0G
+b1001 F
+b1001 E
+b1001 D
+b0 C
+b1001 B
+b1000 A
+b10000000000 @
+b10000001011 ?
+b1010010000001001 >
+0=
+1<
+1;
+b1010010000001011 :
+b0 9
+b1000010000000101010010000001011 8
+b0 7
+b1010010000001001 6
+b1000 5
+b1000000000000000 4
+b1100 3
+b1000010000000101010010000001011 2
+b0 1
+b0 0
+b100 /
+b1000010000000101010010000001011 .
+b0 -
+b10 ,
+b101 +
+0*
+b0 )
+0(
+b1000010000000101010010000001011 '
+b0 &
+b1000010000000101010010000001011 %
+b0 $
+b10 #
+b0 "
+b1000010000000101010010000001011 !
+$end
